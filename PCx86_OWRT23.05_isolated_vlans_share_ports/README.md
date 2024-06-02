@@ -18,6 +18,10 @@ OpenWRT 23.05.3 is installed on PC x86 with 4 SFP ports (ports are enumerated: 0
   - to route segment "dev" (192.168.101.0/24) to another switch only
   - to route segments "prod" (192.168.103.0/24) and "iot" (192.168.1.0/24) to all switches.
 
+![img](draw_network_layout.png)
+
+
+
 Below is detailed description of targeted configuration.
 
 1. Interface "dev" (development) = VLAN 101 goes to port 6 only; DHCP: static, 192.168.101.1/24
@@ -63,7 +67,13 @@ Below is detailed description of targeted configuration.
       1. from zone "fw_iot" to router ports 53,67,68 by TCP UDP: allow
 
 
+![img](draw_network_communication.png)
+
+
 ## OpenWRT router. configuration
+
+![img](draw_openwrt_router_configuration.png)
+
 
 
 ## OpenWRT router. Cllect network configuration
