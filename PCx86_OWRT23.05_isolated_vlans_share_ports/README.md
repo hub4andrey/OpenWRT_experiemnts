@@ -3,7 +3,7 @@
 TOC:
 - [x86 VLAN isolated with stub VLAN ID 99](#x86-vlan-isolated-with-stub-vlan-id-99)
   - [The goals](#the-goals)
-  - [OpenWRT configuration](#openwrt-configuration)
+  - [OpenWRT router. configuration](#openwrt-router-configuration)
   - [OpenWRT router. Cllect network configuration](#openwrt-router-cllect-network-configuration)
 
 
@@ -12,8 +12,11 @@ TOC:
 OpenWRT 23.05.3 is installed on PC x86 with 4 SFP ports (ports are enumerated: 0-3) and 5 ethernet ports (ports are enumerated: 4 - 8). This is "OpenWRT router".
 
 - ISP is connected to ethernet port 8.
-- I want to connect 2 switches to OpenWRT router via ethernet ports 6 and 7.
-- I need route segment "stg" to one switch only, route segment "dev" to another switch only, route segments "prod" and "iot" to all switches.
+- 2 switches are connected to OpenWRT router via ethernet ports 6 and 7.
+- Required routing:
+  - to route segment "stg" (192.168.102.0/24) to one switch only
+  - to route segment "dev" (192.168.101.0/24) to another switch only
+  - to route segments "prod" (192.168.103.0/24) and "iot" (192.168.1.0/24) to all switches.
 
 Below is detailed description of targeted configuration.
 
@@ -60,7 +63,7 @@ Below is detailed description of targeted configuration.
       1. from zone "fw_iot" to router ports 53,67,68 by TCP UDP: allow
 
 
-## OpenWRT configuration
+## OpenWRT router. configuration
 
 
 ## OpenWRT router. Cllect network configuration
