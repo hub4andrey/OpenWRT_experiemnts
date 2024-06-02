@@ -3,10 +3,19 @@
 TOC:
 - [x86 VLAN isolated with stub VLAN ID 99](#x86-vlan-isolated-with-stub-vlan-id-99)
   - [The goals](#the-goals)
-  - [Router. How to collect OpenWRT network configuration](#router-how-to-collect-openwrt-network-configuration)
+  - [OpenWRT configuration](#openwrt-configuration)
+  - [OpenWRT router. Cllect network configuration](#openwrt-router-cllect-network-configuration)
 
 
 ## The goals
+
+OpenWRT 23.05.3 is installed on PC x86 with 4 SFP ports (ports are enumerated: 0-3) and 5 ethernet ports (ports are enumerated: 4 - 8). This is "OpenWRT router".
+
+- ISP is connected to ethernet port 8.
+- I want to connect 2 switches to OpenWRT router via ethernet ports 6 and 7.
+- I need route segment "stg" to one switch only, route segment "dev" to another switch only, route segments "prod" and "iot" to all switches.
+
+Below is detailed description of targeted configuration.
 
 1. Interface "dev" (development) = VLAN 101 goes to port 6 only; DHCP: static, 192.168.101.1/24
 2. Interface "stg" (stage) = VLAN 102 goes to port 7 only; DHCP: static, 192.168.102.1/24
@@ -51,8 +60,10 @@ TOC:
       1. from zone "fw_iot" to router ports 53,67,68 by TCP UDP: allow
 
 
+## OpenWRT configuration
 
-## Router. How to collect OpenWRT network configuration
+
+## OpenWRT router. Cllect network configuration
 
 ```bash
 PROJDIR="/your/project/dir/on/laptop"
