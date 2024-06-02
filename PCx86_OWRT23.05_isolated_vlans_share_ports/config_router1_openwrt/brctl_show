@@ -1,0 +1,9 @@
+bridge name	bridge id		STP enabled	interfaces
+br-lan		7fff.xxxxxxxxxc6d	no		eth4
+							eth5
+br-left		7fff.xxxxxxxxxc70	no		eth7
+br-mid		7fff.xxxxxxxxxc70	no		br-left.103
+							br-left.104
+							br-right.103
+							br-right.104b
+br-right		7fff.xxxxxxxxxc6f	no		eth6

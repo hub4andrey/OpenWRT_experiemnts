@@ -1,0 +1,175 @@
+
+config interface 'loopback'
+	option device 'lo'
+	option proto 'static'
+	option ipaddr '127.0.0.1'
+	option netmask '255.0.0.0'
+
+config globals 'globals'
+	option ula_prefix 'xxxx:xxxx:xxxx::/48'
+
+config device
+	option name 'br-lan'
+	option type 'bridge'
+	option ipv6 '0'
+	list ports 'eth4'
+	list ports 'eth5'
+
+config interface 'lan'
+	option device 'br-lan'
+	option proto 'static'
+	option ipaddr '192.168.1.1'
+	option netmask '255.255.255.0'
+	option ip6assign '60'
+
+config interface 'wan'
+	option device 'eth8'
+	option proto 'dhcp'
+
+config interface 'wan6'
+	option device 'eth8'
+	option proto 'dhcpv6'
+
+config interface 'dev'
+	option proto 'static'
+	option device 'br-right.101'
+	option ipaddr '192.168.101.1'
+	option netmask '255.255.255.0'
+
+config interface 'stg'
+	option proto 'static'
+	option device 'br-left.102'
+	option ipaddr '192.168.102.1'
+	option netmask '255.255.255.0'
+
+config device
+	option type 'bridge'
+	option name 'br-left'
+	list ports 'eth7'
+	option ipv6 '0'
+
+config bridge-vlan
+	option device 'br-left'
+	option vlan '102'
+	list ports 'eth7:t'
+
+config bridge-vlan
+	option device 'br-left'
+	option vlan '99'
+	list ports 'eth7:u*'
+
+config device
+	option type 'bridge'
+	option name 'br-right'
+	list ports 'eth6'
+	option ipv6 '0'
+	option promisc '0'
+
+config bridge-vlan
+	option device 'br-right'
+	option vlan '101'
+	list ports 'eth6:t'
+
+config bridge-vlan
+	option device 'br-right'
+	option vlan '99'
+	list ports 'eth6:u*'
+
+config device
+	option type 'bridge'
+	option name 'br-mid'
+	option ipv6 '0'
+	list ports 'br-left.103'
+	list ports 'br-left.104'
+	list ports 'br-right.103'
+	list ports 'br-right.104b'
+
+config interface 'prod'
+	option proto 'static'
+	option device 'br-mid.103'
+	option ipaddr '192.168.103.1'
+	option netmask '255.255.255.0'
+
+config bridge-vlan
+	option device 'br-left'
+	option vlan '103'
+	list ports 'eth7:t'
+
+config bridge-vlan
+	option device 'br-right'
+	option vlan '103'
+	list ports 'eth6:t'
+
+config device
+	option name 'br-right.103'
+	option type '8021q'
+	option ifname 'br-right'
+	option vid '103'
+	option promisc '1'
+	option arp_accept '0'
+
+config bridge-vlan
+	option device 'br-left'
+	option vlan '104'
+	list ports 'eth7:t'
+
+config bridge-vlan
+	option device 'br-right'
+	option vlan '104'
+	list ports 'eth6:t'
+
+config bridge-vlan
+	option device 'br-mid'
+	option vlan '103'
+	list ports 'br-left.103:t'
+	list ports 'br-right.103:t'
+	list ports 'br-right.104b:t'
+
+config bridge-vlan
+	option device 'br-mid'
+	option vlan '104'
+	list ports 'br-left.103:t'
+	list ports 'br-right.103:t'
+	list ports 'br-right.104b:t'
+
+config interface 'iot'
+	option proto 'static'
+	option device 'br-mid.104'
+	option ipaddr '192.168.104.1'
+	option netmask '255.255.255.0'
+
+config device
+	option name 'br-mid.103'
+	option type '8021q'
+	option ifname 'br-mid'
+	option vid '103'
+	option ipv6 '0'
+
+config device
+	option name 'br-mid.104'
+	option type '8021q'
+	option ifname 'br-mid'
+	option vid '104'
+	option ipv6 '0'
+
+config device
+	option name 'br-right.104'
+	option type '8021q'
+	option ifname 'br-right'
+	option vid '104'
+	option promisc '0'
+
+config bridge-vlan
+	option device 'br-mid'
+	option vlan '99'
+	list ports 'br-left.103:u*'
+	list ports 'br-right.103:u*'
+	list ports 'br-right.104b:u*'
+
+config device
+	option type '8021q'
+	option ifname 'br-right'
+	option vid '104'
+	option name 'br-right.104b'
+	option ipv6 '0'
+
