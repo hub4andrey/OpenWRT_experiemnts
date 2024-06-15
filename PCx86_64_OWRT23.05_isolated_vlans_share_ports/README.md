@@ -85,6 +85,8 @@ Step 1. Add bridge device. Click on "Add device configuration..":
 - **Enable IPv6**: `disabled`
 - **Bridge ports**: in `--custom--` type `eth7.102` (step 2)
 
+**Side note**: why we use so short names for interfaces like `brl102`? The Linux kernel limits the [physical interface name length to MAX 14 usable characters](https://openwrt.org/docs/guide-user/network/network_configuration#section_interface) including the automatically added prefix that is added for some protocols. As example, if you use PPPoE protocol and VLAN, then they add prefix `pppoe-`  and suffix `.NNNN`, so you have only 3 characters for device name.
+
 
 ![img](./imgs/openwrt_configuration_guidance_v23.05_002.png)
 
@@ -481,3 +483,5 @@ Firewall zone rules:
 ![img](./imgs/openwrt_configuration_guidance_v23.05_053.png)
 
 Now it's time to [test our new network setup](./openwrt_configuration_testing.md).
+
+As a bonus, you can use this script to [collect configuration data from OpenWRT router](./scripts/router1_openwrt_collect_data.sh) and your test PC devices.
