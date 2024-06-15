@@ -1,0 +1,30 @@
+# ssh root@192.168.1.1 brctl showstp br-lan > brctl_br-lan_setup_show
+br-lan
+ bridge id		7fff.xxxxxxxxxc6d
+ designated root	7fff.xxxxxxxxxc6d
+ root port		   0			path cost		   0
+ max age		  10.00			bridge max age		  10.00
+ hello time		   1.00			bridge hello time	   1.00
+ forward delay		   8.00			bridge forward delay	   8.00
+ ageing time		 300.00
+ hello timer		   0.00			tcn timer		   0.00
+ topology change timer	   0.00			gc timer		  33.89
+ flags			
+
+
+eth4 (1)
+ port id		8001			state		     forwarding
+ designated root	7fff.xxxxxxxxxc6d	path cost		   4
+ designated bridge	7fff.xxxxxxxxxc6d	message age timer	   0.00
+ designated port	8001			forward delay timer	   0.00
+ designated cost	   0			hold timer		   0.00
+ flags			
+
+eth5 (2)
+ port id		8002			state		       disabled
+ designated root	7fff.xxxxxxxxxc6d	path cost		 100
+ designated bridge	7fff.xxxxxxxxxc6d	message age timer	   0.00
+ designated port	8002			forward delay timer	   0.00
+ designated cost	   0			hold timer		   0.00
+ flags			
+

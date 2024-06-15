@@ -1,0 +1,2 @@
+# ssh whoareyou@192.168.101.128 bridge vlan show > bridge_vlan_show
+port              vlan-id  

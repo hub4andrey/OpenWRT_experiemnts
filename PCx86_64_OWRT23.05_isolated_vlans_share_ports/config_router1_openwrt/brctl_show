@@ -1,0 +1,12 @@
+# ssh root@192.168.1.1 brctl show > brctl_show
+bridge name	bridge id		STP enabled	interfaces
+br-lan		7fff.xxxxxxxxxc6d	no		eth4
+							eth5
+br99		7fff.xxxxxxxxxc6f	no		eth6
+							eth7
+brl102		7fff.xxxxxxxxxc70	no		eth7.102
+brm103		7fff.xxxxxxxxxc6f	no		eth6.103
+							eth7.103
+brm104		7fff.xxxxxxxxxc6f	no		eth6.104
+							eth7.104
+brr101		7fff.xxxxxxxxxc6f	no		eth6.101

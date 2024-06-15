@@ -1,0 +1,95 @@
+
+config interface 'loopback'
+	option device 'lo'
+	option proto 'static'
+	option ipaddr '127.0.0.1'
+	option netmask '255.0.0.0'
+
+config globals 'globals'
+	option ula_prefix 'xxxx:xxxx:xxxx::/48'
+
+config device
+	option name 'br-lan'
+	option type 'bridge'
+	option ipv6 '0'
+	list ports 'eth4'
+	list ports 'eth5'
+
+config interface 'lan'
+	option device 'br-lan'
+	option proto 'static'
+	option ipaddr '192.168.1.1'
+	option netmask '255.255.255.0'
+	option ip6assign '60'
+
+config interface 'wan'
+	option device 'eth8'
+	option proto 'dhcp'
+
+config interface 'wan6'
+	option device 'eth8'
+	option proto 'dhcpv6'
+
+config device
+	option type 'bridge'
+	option name 'brl102'
+	list ports 'eth7.102'
+	option ipv6 '0'
+
+config device
+	option type 'bridge'
+	option name 'brm103'
+	list ports 'eth6.103'
+	list ports 'eth7.103'
+	option ipv6 '0'
+
+config interface 'stg'
+	option proto 'static'
+	option device 'brl102'
+	option ipaddr '192.168.102.1'
+	option netmask '255.255.255.0'
+
+config interface 'prod'
+	option proto 'static'
+	option device 'brm103'
+	option ipaddr '192.168.103.1'
+	option netmask '255.255.255.0'
+
+config device
+	option type 'bridge'
+	option name 'brm104'
+	list ports 'eth6.104'
+	list ports 'eth7.104'
+	option ipv6 '0'
+
+config device
+	option type 'bridge'
+	option name 'brr101'
+	option ipv6 '0'
+	list ports 'eth6.101'
+
+config interface 'iot'
+	option proto 'static'
+	option device 'brm104'
+	option ipaddr '192.168.104.1'
+	option netmask '255.255.255.0'
+
+config interface 'dev'
+	option proto 'static'
+	option device 'brr101'
+	option ipaddr '192.168.101.1'
+	option netmask '255.255.255.0'
+
+config device
+	option type 'bridge'
+	option name 'br99'
+	list ports 'eth6'
+	list ports 'eth7'
+	option ipv6 '0'
+
+config interface 'net_plug'
+	option proto 'static'
+	option device 'br99'
+	option ipaddr '192.168.99.1'
+	option netmask '255.255.255.0'
+

@@ -1,0 +1,22 @@
+# ssh root@192.168.1.1 brctl showstp brr101 > brctl_brr101_setup_show
+brr101
+ bridge id		7fff.xxxxxxxxxc6f
+ designated root	7fff.xxxxxxxxxc6f
+ root port		   0			path cost		   0
+ max age		  10.00			bridge max age		  10.00
+ hello time		   1.00			bridge hello time	   1.00
+ forward delay		   8.00			bridge forward delay	   8.00
+ ageing time		 300.00
+ hello timer		   0.00			tcn timer		   0.00
+ topology change timer	   0.00			gc timer		 172.75
+ flags			
+
+
+eth6.101 (1)
+ port id		8001			state		     forwarding
+ designated root	7fff.xxxxxxxxxc6f	path cost		   4
+ designated bridge	7fff.xxxxxxxxxc6f	message age timer	   0.00
+ designated port	8001			forward delay timer	   0.00
+ designated cost	   0			hold timer		   0.00
+ flags			
+

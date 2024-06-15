@@ -1,0 +1,175 @@
+# ssh root@192.168.1.1 ubus call uci get \'{"config": "network"}\'> ubus_call_uci_get_config_network
+{
+	"values": {
+		"loopback": {
+			".anonymous": false,
+			".type": "interface",
+			".name": "loopback",
+			".index": 0,
+			"device": "lo",
+			"proto": "static",
+			"ipaddr": "127.0.0.1",
+			"netmask": "255.0.0.0"
+		},
+		"globals": {
+			".anonymous": false,
+			".type": "globals",
+			".name": "globals",
+			".index": 1,
+			"ula_prefix": "xxxx:xxxx:xxxx::/48"
+		},
+		"cfg030f15": {
+			".anonymous": true,
+			".type": "device",
+			".name": "cfg030f15",
+			".index": 2,
+			"name": "br-lan",
+			"type": "bridge",
+			"ipv6": "0",
+			"ports": [
+				"eth4",
+				"eth5"
+			]
+		},
+		"lan": {
+			".anonymous": false,
+			".type": "interface",
+			".name": "lan",
+			".index": 3,
+			"device": "br-lan",
+			"proto": "static",
+			"ipaddr": "192.168.1.1",
+			"netmask": "255.255.255.0",
+			"ip6assign": "60"
+		},
+		"wan": {
+			".anonymous": false,
+			".type": "interface",
+			".name": "wan",
+			".index": 4,
+			"device": "eth8",
+			"proto": "dhcp"
+		},
+		"wan6": {
+			".anonymous": false,
+			".type": "interface",
+			".name": "wan6",
+			".index": 5,
+			"device": "eth8",
+			"proto": "dhcpv6"
+		},
+		"cfg070f15": {
+			".anonymous": true,
+			".type": "device",
+			".name": "cfg070f15",
+			".index": 6,
+			"type": "bridge",
+			"name": "brl102",
+			"ports": [
+				"eth7.102"
+			],
+			"ipv6": "0"
+		},
+		"cfg080f15": {
+			".anonymous": true,
+			".type": "device",
+			".name": "cfg080f15",
+			".index": 7,
+			"type": "bridge",
+			"name": "brm103",
+			"ports": [
+				"eth6.103",
+				"eth7.103"
+			],
+			"ipv6": "0"
+		},
+		"stg": {
+			".anonymous": false,
+			".type": "interface",
+			".name": "stg",
+			".index": 8,
+			"proto": "static",
+			"device": "brl102",
+			"ipaddr": "192.168.102.1",
+			"netmask": "255.255.255.0"
+		},
+		"prod": {
+			".anonymous": false,
+			".type": "interface",
+			".name": "prod",
+			".index": 9,
+			"proto": "static",
+			"device": "brm103",
+			"ipaddr": "192.168.103.1",
+			"netmask": "255.255.255.0"
+		},
+		"cfg0b0f15": {
+			".anonymous": true,
+			".type": "device",
+			".name": "cfg0b0f15",
+			".index": 10,
+			"type": "bridge",
+			"name": "brm104",
+			"ports": [
+				"eth6.104",
+				"eth7.104"
+			],
+			"ipv6": "0"
+		},
+		"cfg0c0f15": {
+			".anonymous": true,
+			".type": "device",
+			".name": "cfg0c0f15",
+			".index": 11,
+			"type": "bridge",
+			"name": "brr101",
+			"ipv6": "0",
+			"ports": [
+				"eth6.101"
+			]
+		},
+		"iot": {
+			".anonymous": false,
+			".type": "interface",
+			".name": "iot",
+			".index": 12,
+			"proto": "static",
+			"device": "brm104",
+			"ipaddr": "192.168.104.1",
+			"netmask": "255.255.255.0"
+		},
+		"dev": {
+			".anonymous": false,
+			".type": "interface",
+			".name": "dev",
+			".index": 13,
+			"proto": "static",
+			"device": "brr101",
+			"ipaddr": "192.168.101.1",
+			"netmask": "255.255.255.0"
+		},
+		"cfg0f0f15": {
+			".anonymous": true,
+			".type": "device",
+			".name": "cfg0f0f15",
+			".index": 14,
+			"type": "bridge",
+			"name": "br99",
+			"ports": [
+				"eth6",
+				"eth7"
+			],
+			"ipv6": "0"
+		},
+		"net_plug": {
+			".anonymous": false,
+			".type": "interface",
+			".name": "net_plug",
+			".index": 15,
+			"proto": "static",
+			"device": "br99",
+			"ipaddr": "192.168.99.1",
+			"netmask": "255.255.255.0"
+		}
+	}
+}

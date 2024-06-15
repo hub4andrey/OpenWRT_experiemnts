@@ -1,0 +1,38 @@
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host noprefixroute 
+       valid_lft forever preferred_lft forever
+2: enp0s25: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether XX:XX:XX:XX:XX:bb brd ff:ff:ff:ff:ff:ff
+    inet 192.168.99.128/24 brd 192.168.99.255 scope global dynamic enp0s25
+       valid_lft 40527sec preferred_lft 40527sec
+    inet6 xxxx::xxxx:xxxx:xxxx:c9bb/64 scope link 
+       valid_lft forever preferred_lft forever
+3: enx000011121314: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether XX:XX:XX:XX:XX:14 brd ff:ff:ff:ff:ff:ff
+4: wlp3s0: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether XX:XX:XX:XX:XX:15 brd ff:ff:ff:ff:ff:ff
+5: enp0s25.104@enp0s25: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether XX:XX:XX:XX:XX:bb brd ff:ff:ff:ff:ff:ff
+    inet 192.168.104.128/24 metric 100 brd 192.168.104.255 scope global dynamic enp0s25.104
+       valid_lft 460sec preferred_lft 460sec
+    inet6 xxxx::xxxx:xxxx:xxxx:c9bb/64 scope link 
+       valid_lft forever preferred_lft forever
+6: enp0s25.101@enp0s25: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether XX:XX:XX:XX:XX:bb brd ff:ff:ff:ff:ff:ff
+    inet 192.168.101.128/24 metric 100 brd 192.168.101.255 scope global dynamic enp0s25.101
+       valid_lft 42139sec preferred_lft 42139sec
+    inet6 xxxx::xxxx:xxxx:xxxx:c9bb/64 scope link 
+       valid_lft forever preferred_lft forever
+7: enp0s25.102@enp0s25: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether XX:XX:XX:XX:XX:bb brd ff:ff:ff:ff:ff:ff
+    inet6 xxxx::xxxx:xxxx:xxxx:c9bb/64 scope link 
+       valid_lft forever preferred_lft forever
+8: enp0s25.103@enp0s25: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether XX:XX:XX:XX:XX:bb brd ff:ff:ff:ff:ff:ff
+    inet 192.168.103.128/24 metric 100 brd 192.168.103.255 scope global dynamic enp0s25.103
+       valid_lft 460sec preferred_lft 460sec
+    inet6 xxxx::xxxx:xxxx:xxxx:c9bb/64 scope link 
+       valid_lft forever preferred_lft forever

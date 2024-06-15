@@ -1,0 +1,28 @@
+network:
+    version: 2
+
+    ethernets:
+      enp0s25:
+        dhcp4: no
+        dhcp6: no
+
+    vlans:
+      enp0s25.101:
+        id: 101
+        link: enp0s25
+        dhcp4: yes
+
+      enp0s25.102:
+        id: 102
+        link: enp0s25
+        dhcp4: yes
+
+      enp0s25.103:
+        id: 103
+        link: enp0s25
+        dhcp4: yes
+
+      enp0s25.104:
+        id: 104
+        link: enp0s25
+        dhcp4: yes
